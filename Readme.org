@@ -10,14 +10,25 @@ I find that one of the more fun and gratifying ways to use Ableton Live is as a 
 
 ModUPlo are set up so that they take an input, and (generally) output something.  They may take an input and change it back to an output, or transform it into another output entirely. 
 
+* Downloading
 
-By analogy, these are your 2x2 or 2x4 multicolored blocks.  They are general use bricks without a purpose in mind.
+For now there is no official release, so [[https://github.com/jonnay/ModUPlo/archive/master.zip][Download the latest as a zip file]].
+
+* Contents
+
+First there is the set of general blocks.  By analogy, these are your 2x2 or 2x4 multicolored blocks.  They are general use bricks without a purpose in mind.
 
 - PolyPhony :: Count concurrent notes and send as a parameter change
 - NoteAte :: Convert a Midi note to a Parameter
 - 8StepSequencer :: Does what it says on the tin.
 - Average :: Takes 2 inputs and averages them for output
 - DynamicControl :: Outputs a parameter changes when a threshold is reached. 
+
+There are also a set of specific blocks that scratch my itchey-witchy-toeey-woseys.  By analogy these would be your little puppy or construction worker figures.
+
+- ScAle :: Scales midi notes according to the Scale settings on Push (2)
+- AckSent :: Emulates the TB-303 Accent Circuit by Modifying Velocity
+- TempoCalc :: Yet another tempo calculator
 
 * Inputs and Outputs
 
@@ -73,7 +84,7 @@ a little bit like an envelope follower, but really only concerned about threshol
 
 These are less generic blocks and fit specific needs for me.  They may also fit for you!
 
-** Sc/Ale - Scale notes according to Push or Push 2 scale setting
+** ScAle - Scale notes according to Push or Push 2 scale setting
 
 [[file:assets/ScAle.png]]
 
@@ -81,7 +92,7 @@ Like the Live Midi Scale object, but takes the scale from Push (2) and scales in
 
 It needs a better display.
 
-** Ack/Sent - The TB-303 Accent Circuit Emulator
+** AckSent - The TB-303 Accent Circuit Emulator
 
 
 [[file:assets/AckSent.png]]
