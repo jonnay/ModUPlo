@@ -1,0 +1,102 @@
+#+title: ModUPlo
+
+#+BEGIN_QUOTE
+Live is Modular
+
+Modular is Love
+#+END_QUOTE
+
+I find that one of the more fun and gratifying ways to use Ableton Live is as a Modular Synthesizer.  ModUPlo is a set of building block to help achieve that end.  
+
+ModUPlo are set up so that they take an input, and (generally) output something.  They may take an input and change it back to an output, or transform it into another output entirely. 
+
+
+By analogy, these are your 2x2 or 2x4 multicolored blocks.  They are general use bricks without a purpose in mind.
+
+- PolyPhony :: Count concurrent notes and send as a parameter change
+- NoteAte :: Convert a Midi note to a Parameter
+- 8StepSequencer :: Does what it says on the tin.
+- Average :: Takes 2 inputs and averages them for output
+- DynamicControl :: Outputs a parameter changes when a threshold is reached. 
+
+* Inputs and Outputs
+
+Moduplo Explains what it takes as input and output by confusing tiny icons.  Don't worry.  You can also use the mouse and hover over the logo to get a full description in the live info box. 
+
+The inputs and outputs are:
+
+- [[file:assets/key.png]] Midi Notes
+- [[file:assets/metronome.png]] Transport (metronome, etc.)
+- [[file:assets/wave.png]] Audio
+- [[file:assets/knob.png]] Parameters
+
+The parameter inputs are essentially knobs, and can either be twiddled by mouse, or mapped to.  
+Parameter outputs have map buttons that are intended to be mapped to other devices.
+
+* General Blocks
+
+These general use blocks could theoretically be used for anything.  They all started as a way to scratch a particular itch of mine, but were generalized.
+
+** PolyPhony - Count concurrent note on messages
+
+[[file:assets/PolyPhony.png]]
+
+Ever wanted to send a parameter based on he number of midi notes held?  This module is for you.
+
+You could turn a mono-synth into a polysynth by dumping it in a rack, duplicating it, and putting one of these in front. 
+
+** NoteAte - Turn a Midi note into a Parameter
+
+[[file:assets/PolyPhony.png]]
+
+Monophonic.  Converts notes into parameters.
+
+** 8StepSeq - A simple 8 step sequencer
+
+[[file:assets/8StepSeq.png]]
+
+A very simple 8 step sequencer.  Made to be used with a piece of hardware for on-the-go parameter fun.
+
+** Average - 2 Control Messages Enter, one Control message leaves
+[[file:assets/Average.png]]
+
+There are times that I want 2 sources to control 1 parameter.  This solves that.
+
+** DynamicControl - A building block for a compressor
+[[file:assets/DynamicControl.png]]
+
+a little bit like an envelope follower, but really only concerned about threshold.  Once the audio reaches a certain level it starts sending out parameter messages.
+
++ and - output 2 basically bullshit scales, find out which one is right for you!
+
+* Specific Blocks
+
+These are less generic blocks and fit specific needs for me.  They may also fit for you!
+
+** Sc/Ale - Scale notes according to Push or Push 2 scale setting
+
+[[file:assets/ScAle.png]]
+
+Like the Live Midi Scale object, but takes the scale from Push (2) and scales incoming midi to that.  Also respects Root note. 
+
+It needs a better display.
+
+** Ack/Sent - The TB-303 Accent Circuit Emulator
+
+
+[[file:assets/AckSent.png]]
+
+This does a velocity based emulation of the TB-303 Accent Sweep circuit based on the description by insane-genius Robbin Whittle [[https://www.firstpr.com.au/rwi/dfish/303-unique.html]]
+
+First, any incoming velocities are set to 1 if they are less than 64, and 64 if they are higher.  If notes with velocity greater than 64 are played in rapid succession the output velocity gets set to higher and higher.
+
+You can use the accent knob to change the amount, and the light signals when you've hit the highest amount.  
+
+While not a perfect recreation of the TB-303's accent (the accent has it's own envelope) this is pretty close, but you can map it to any parameter, like say distortion, lfo speed...
+
+** TempoCalc - Everyone builds their own. I am no exception.
+[[file:assets/TempoCalc.png]]
+
+Making a BPM to millisecond converter is the Max for Live equivalent of building a scheme interpreter. 
+
+This is mine.
