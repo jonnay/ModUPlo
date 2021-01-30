@@ -6,6 +6,8 @@ Live is Modular
 Modular is Love
 #+END_QUOTE
 
+Version: 0.2
+
 I find that one of the more fun and gratifying ways to use Ableton Live is as a Modular Synthesizer.  ModUPlo is a set of building block to help achieve that end.  
 
 ModUPlo are set up so that they take an input, and (generally) output something.  They may take an input and change it back to an output, or transform it into another output entirely. 
@@ -23,6 +25,8 @@ First there is the set of general blocks.  By analogy, these are your 2x2 or 2x4
 - 8StepSequencer :: Does what it says on the tin.
 - Average :: Takes 2 inputs and averages them for output
 - DynamicControl :: Outputs a parameter changes when a threshold is reached. 
+- Random8 :: On a Trigger outputs 8 random values
+- LongCount :: Every 64 / 128 / 256 / 512 bars Output a Trigger 
 
 There are also a set of specific blocks that scratch my itchey-witchy-toeey-woseys.  By analogy these would be your little puppy or construction worker figures.
 
@@ -40,9 +44,12 @@ The inputs and outputs are:
 - [[file:assets/metronome.png]] Transport (metronome, etc.)
 - [[file:assets/wave.png]] Audio
 - [[file:assets/knob.png]] Parameters
+- [[file:assets/trigger.png]] Trigger 
 
 The parameter inputs are essentially knobs, and can either be twiddled by mouse, or mapped to.  
 Parameter outputs have map buttons that are intended to be mapped to other devices.
+
+Triggers are currently ill defined. A trigger input is any parameter greater than 64.  A trigger output sets a parameter to 127 for a 64th note. 
 
 * General Blocks
 
@@ -80,6 +87,16 @@ a little bit like an envelope follower, but really only concerned about threshol
 
 + and - output 2 basically bullshit scales, find out which one is right for you!
 
+** Random8 -  On any of 4 Triggers outputs 8 random values
+[[file:assets/Random8.png]]
+
+Randomizes 8 parameters. 4 triggers are provided, and are in order of precedence (most significant trigger first).  That means you could map the last 3, while saving the first one for manual control.
+ 
+** LongCount -  Every 64 / 128 / 256 / 512 bars Output a Trigger 
+[[file:assets/LongCount.png]]
+
+Counts Bars, outputs a Trigger.  Simple really. 
+
 * Specific Blocks
 
 These are less generic blocks and fit specific needs for me.  They may also fit for you!
@@ -111,3 +128,10 @@ While not a perfect recreation of the TB-303's accent (the accent has it's own e
 Making a BPM to millisecond converter is the Max for Live equivalent of building a scheme interpreter. 
 
 This is mine.
+* Change Log
+ - v0.1 :: Initial commit to repo
+ - v0.2 :: Versioning and 2 devices!
+   - Added LongCount (may be broken)
+   - Added Random 8
+
+    
