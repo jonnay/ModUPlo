@@ -6,7 +6,7 @@ Live is Modular
 Modular is Love
 #+END_QUOTE
 
-Version: 0.2
+Version: 0.3
 
 I find that one of the more fun and gratifying ways to use Ableton Live is as a Modular Synthesizer.  ModUPlo is a set of building block to help achieve that end.  
 
@@ -20,19 +20,7 @@ For now there is no official release, so [[https://github.com/jonnay/ModUPlo/arc
 
 First there is the set of general blocks.  By analogy, these are your 2x2 or 2x4 multicolored blocks.  They are general use bricks without a purpose in mind.
 
-- PolyPhony :: Count concurrent notes and send as a parameter change
-- NoteAte :: Convert a Midi note to a Parameter
-- 8StepSequencer :: Does what it says on the tin.
-- Average :: Takes 2 inputs and averages them for output
-- DynamicControl :: Outputs a parameter changes when a threshold is reached. 
-- Random8 :: On a Trigger outputs 8 random values
-- LongCount :: Every 64 / 128 / 256 / 512 bars Output a Trigger 
-
 There are also a set of specific blocks that scratch my itchey-witchy-toeey-woseys.  By analogy these would be your little puppy or construction worker figures.
-
-- ScAle :: Scales midi notes according to the Scale settings on Push (2)
-- AckSent :: Emulates the TB-303 Accent Circuit by Modifying Velocity
-- TempoCalc :: Yet another tempo calculator
 
 * Inputs and Outputs
 
@@ -45,11 +33,14 @@ The inputs and outputs are:
 - [[file:assets/wave.png]] Audio
 - [[file:assets/knob.png]] Parameters
 - [[file:assets/trigger.png]] Trigger 
+- [[file:assets/Gate.png]] Gate
 
 The parameter inputs are essentially knobs, and can either be twiddled by mouse, or mapped to.  
 Parameter outputs have map buttons that are intended to be mapped to other devices.
 
 Triggers are currently ill defined. A trigger input is any parameter greater than 64.  A trigger output sets a parameter to 127 for a 64th note. 
+
+Gates are also ill defined.  Input: < 64 off, > 64 on.  Output: 0 off 127 on
 
 * General Blocks
 
@@ -97,6 +88,31 @@ Randomizes 8 parameters. 4 triggers are provided, and are in order of precedence
 
 Counts Bars, outputs a Trigger.  Simple really. 
 
+** YouKlid - A Euclidian Trigger Generator 
+[[file:assets/YouKlid.png]]
+
+Give it a number of onsets, a length, offsets, and a beat, and it generates Euclidian rhythms for you.
+
+Try chaining this to Makenote and then a drum rack.
+
+** abACABad - An Abacabadaba generator that is on power of 2 boundaries
+[[file:assets/abACABad.png]]
+
+Generates a simple abacabadaba pattern.  You specify the rate in beats, and the "order" and it will generate patterns like:
+
+- 0
+- 0 127
+- 0 64 0 127
+- 0 32 0 64 0 32 0 127
+- 0 16 0 32 0 16 0 64 0 16 0 32 0 16 0 127
+
+** MakeNote - A really shitty UI to view midi notes, and generate them from gates/pulses
+[[file:assets/MakeNote.png]]
+
+Mostly self explanatory.  The keyboard needs to be expandable and collapsible to make this less unwieldy. Really the whole UI needs a lot of work.
+
+The pink line below the keyboard shows the range of human hearing when mapped to midi notes. 
+
 * Specific Blocks
 
 These are less generic blocks and fit specific needs for me.  They may also fit for you!
@@ -129,9 +145,14 @@ Making a BPM to millisecond converter is the Max for Live equivalent of building
 
 This is mine.
 * Change Log
- - v0.1 :: Initial commit to repo
+ - v.03 :: Generative Music Scheme
+   - Added alpha-quality devices to help with generative music
+   - Make a trigger abstraction
+   - Added Gates as a thing
+   - Started using Sekrut Alien Technology as an extension language.
  - v0.2 :: Versioning and 2 devices!
    - Added LongCount (may be broken)
-   - Added Random 8
+   - Added Random8
+ - v0.1 :: Initial commit to repo
 
     
