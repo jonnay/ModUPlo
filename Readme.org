@@ -6,7 +6,7 @@ Live is Modular
 Modular is Love
 #+END_QUOTE
 
-Version: 0.3
+Version: 0.3.1
 
 I find that one of the more fun and gratifying ways to use Ableton Live is as a Modular Synthesizer.  ModUPlo is a set of building block to help achieve that end.  
 
@@ -145,7 +145,10 @@ Making a BPM to millisecond converter is the Max for Live equivalent of building
 
 This is mine.
 * Change Log
- - v.03 :: Generative Music Scheme
+ - v0.3.1 :: Bugfix
+   - YouKlid offset works right
+   - Started Librarification
+ - v0.3 :: Generative Music Scheme
    - Added alpha-quality devices to help with generative music
    - Make a trigger abstraction
    - Added Gates as a thing
