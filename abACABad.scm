@@ -29,6 +29,8 @@
              (reverse (make-acab order))
              (make-acab order))))
 
+(load-from-max "lib/test.scm")
+
 (define (test)
   (post "Testing...")
   (expect 'order-0-is-127
@@ -43,20 +45,3 @@
           equal?
           '(0 64 0 127)
           (make-acab 2)))
-
-(define (expect name condition a b)
-  (let ((result (apply condition (list a b))))
-    (if result
-        (post name)
-        (error 'test-failure
-               (with-output-to-string
-                 (lambda ()
-                   (display "failure: ")
-                   (display name)
-                   (newline)
-                   (display "Comparison: ")
-                   (display (object->string condition))
-                   (newline)
-                   (display (object->string a))
-                   (newline)
-                   (display (object->string b))))))))
