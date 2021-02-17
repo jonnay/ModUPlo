@@ -6,7 +6,7 @@ Live is Modular
 Modular is Love
 #+END_QUOTE
 
-Version: 0.3.1
+Version: 0.3.2
 
 I find that one of the more fun and gratifying ways to use Ableton Live is as a Modular Synthesizer.  ModUPlo is a set of building block to help achieve that end.  
 
@@ -48,7 +48,7 @@ These general use blocks could theoretically be used for anything.  They all sta
 
 ** PolyPhony - Count concurrent note on messages
 
-[[file:assets/PolyPhony.png]]
+[[file:assets/screenshots/screenshot-PolyPhony.png]]
 
 Ever wanted to send a parameter based on he number of midi notes held?  This module is for you.
 
@@ -56,47 +56,47 @@ You could turn a mono-synth into a polysynth by dumping it in a rack, duplicatin
 
 ** NoteAte - Turn a Midi note into a Parameter
 
-[[file:assets/PolyPhony.png]]
+[[file:assets/screenshots/screenshot-PolyPhony.png]]
 
 Monophonic.  Converts notes into parameters.
 
 ** 8StepSeq - A simple 8 step sequencer
 
-[[file:assets/8StepSeq.png]]
+[[file:assets/screenshots/screenshot-8StepSeq.png]]
 
 A very simple 8 step sequencer.  Made to be used with a piece of hardware for on-the-go parameter fun.
 
 ** Average - 2 Control Messages Enter, one Control message leaves
-[[file:assets/Average.png]]
+[[file:assets/screenshots/screenshot-Average.png]]
 
 There are times that I want 2 sources to control 1 parameter.  This solves that.
 
 ** DynamicControl - A building block for a compressor
-[[file:assets/DynamicControl.png]]
+[[file:assets/screenshots/screenshot-DynamicControl.png]]
 
-a little bit like an envelope follower, but really only concerned about threshold.  Once the audio reaches a certain level it starts sending out parameter messages.
+a little bit like an envelope follower, but really only concerned about threshold.  Once the audio reaches a certain level it starts sending out parameter messages.  The Speed controls how reactive Dynamic Control is: from kinda-quick to molasses slow.
 
 + and - output 2 basically bullshit scales, find out which one is right for you!
 
 ** Random8 -  On any of 4 Triggers outputs 8 random values
-[[file:assets/Random8.png]]
+[[file:assets/screenshots/screenshot-Random8.png]]
 
 Randomizes 8 parameters. 4 triggers are provided, and are in order of precedence (most significant trigger first).  That means you could map the last 3, while saving the first one for manual control.
  
 ** LongCount -  Every 64 / 128 / 256 / 512 bars Output a Trigger 
-[[file:assets/LongCount.png]]
+[[file:assets/screenshots/screenshot-LongCount.png]]
 
 Counts Bars, outputs a Trigger.  Simple really. 
 
 ** YouKlid - A Euclidian Trigger Generator 
-[[file:assets/YouKlid.png]]
+[[file:assets/screenshots/screenshot-YouKlid.png]]
 
 Give it a number of onsets, a length, offsets, and a beat, and it generates Euclidian rhythms for you.
 
 Try chaining this to Makenote and then a drum rack.
 
 ** abACABad - An Abacabadaba generator that is on power of 2 boundaries
-[[file:assets/abACABad.png]]
+[[file:assets/screenshots/screenshot-abACABad.png]]
 
 Generates a simple abacabadaba pattern.  You specify the rate in beats, and the "order" and it will generate patterns like:
 
@@ -106,10 +106,10 @@ Generates a simple abacabadaba pattern.  You specify the rate in beats, and the 
 - 0 32 0 64 0 32 0 127
 - 0 16 0 32 0 16 0 64 0 16 0 32 0 16 0 127
 
-** MakeNote - A really shitty UI to view midi notes, and generate them from gates/pulses
-[[file:assets/MakeNote.png]]
+** MakeNote - A UI to view midi notes, and generate them from gates/pulses
+[[file:assets/screenshots/screenshot-MakeNote.png]]
 
-Mostly self explanatory.  The keyboard needs to be expandable and collapsible to make this less unwieldy. Really the whole UI needs a lot of work.
+Shows you what note is being played, or allows you to use control messages to create notes.  If fed a pulse (top) the 
 
 The pink line below the keyboard shows the range of human hearing when mapped to midi notes. 
 
@@ -119,7 +119,7 @@ These are less generic blocks and fit specific needs for me.  They may also fit 
 
 ** ScAle - Scale notes according to Push or Push 2 scale setting
 
-[[file:assets/ScAle.png]]
+[[file:assets/screenshots/screenshot-ScAle.png]]
 
 Like the Live Midi Scale object, but takes the scale from Push (2) and scales incoming midi to that.  Also respects Root note. 
 
@@ -128,7 +128,7 @@ It needs a better display.
 ** AckSent - The TB-303 Accent Circuit Emulator
 
 
-[[file:assets/AckSent.png]]
+[[file:assets/screenshots/screenshot-AckSent.png]]
 
 This does a velocity based emulation of the TB-303 Accent Sweep circuit based on the description by insane-genius Robbin Whittle [[https://www.firstpr.com.au/rwi/dfish/303-unique.html]]
 
@@ -139,12 +139,18 @@ You can use the accent knob to change the amount, and the light signals when you
 While not a perfect recreation of the TB-303's accent (the accent has it's own envelope) this is pretty close, but you can map it to any parameter, like say distortion, lfo speed...
 
 ** TempoCalc - Everyone builds their own. I am no exception.
-[[file:assets/TempoCalc.png]]
+[[file:assets/screenshots/screenshot-TempoCalc.png]]
 
 Making a BPM to millisecond converter is the Max for Live equivalent of building a scheme interpreter. 
 
 This is mine.
 * Change Log
+ - v0.3.2 :: Enhancements
+   - Dynamic Control works on stereo signals
+   - Dynamic Control has output meters
+   - ScAle now displays what and how it's scaling
+   - ScAle has a gate / on/off switch
+   - You can collapse MakeNote 
  - v0.3.1 :: Bugfix
    - YouKlid offset works right
    - Started Librarification
